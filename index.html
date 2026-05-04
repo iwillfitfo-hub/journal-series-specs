@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FITFO Journal Series — Color System & Cover Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0D0D0D;
+  --charcoal: #1C1C1C;
+  --mid: #3A3530;
+  --cream: #E8DCC8;
+  --gold: #C5A55A;
+  --muted: #9A8E7E;
+  --dim: #6B6055;
+}
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+
+/* ═══════════════════
+   SHARED ELEMENTS
+═══════════════════ */
+
+.section {
+  padding: 80px 0;
+  border-top: 1px solid var(--mid);
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--mid);
+}
+
+.section-heading {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section-sub {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 56px;
+}
+
+/* ═══════════════════
+   COVER
+═══════════════════ */
+
+.cover-page {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 60px;
+  border-bottom: 1px solid var(--mid);
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-bg-text {
+  position: absolute;
+  font-size: 320px;
+  font-weight: 300;
+  color: rgba(197,165,90,0.025);
+  letter-spacing: -0.05em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-doc-label {
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.cover-doc-date {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--dim);
+}
+
+.cover-center {
+  position: relative;
+  z-index: 1;
+}
+
+.cover-pre {
+  font-size: 10px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+
+.cover-title {
+  font-size: clamp(64px, 12vw, 130px);
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+}
+
+.cover-title .line { display: block; color: var(--cream); }
+.cover-title .period { color: var(--gold); }
+
+.cover-rule-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0 28px;
+}
+
+.cover-rule-line { width: 48px; height: 1px; background: var(--gold); }
+
+.cover-rule-text {
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cover-doc-title {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-address {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+  line-height: 1.8;
+}
+
+.cover-version {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--dim);
+  font-style: italic;
+}
+
+/* ═══════════════════
+   PHILOSOPHY BLOCK
+═══════════════════ */
+
+.philosophy-block {
+  background: var(--charcoal);
+  border: 1px solid var(--mid);
+  border-left: 3px solid var(--gold);
+  padding: 40px 48px;
+  margin-bottom: 56px;
+}
+
+.philosophy-text {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 700px;
+}
+
+/* ═══════════════════
+   VOLUME ROWS
+═══════════════════ */
+
+.volumes {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--mid);
+  margin-bottom: 60px;
+}
+
+.volume {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: var(--black);
+  min-height: 260px;
+}
+
+.book-mock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.book {
+  width: 130px;
+  height: 190px;
+  position: relative;
+  border-radius: 3px 6px 6px 3px;
+  box-shadow:
+    -4px 0 8px rgba(0,0,0,0.5),
+    4px 4px 20px rgba(0,0,0,0.6),
+    inset -2px 0 4px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-spine {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 12px;
+  border-radius: 3px 0 0 3px;
+  opacity: 0.7;
+}
+
+.book-mark-i {
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.book-mark-will {
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.book-rule {
+  width: 18px;
+  height: 1px;
+  margin: 8px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.book-series {
+  font-size: 5.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 10px;
+  margin-bottom: 3px;
+}
+
+.book-volume {
+  font-size: 5.5px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.book-vol-name {
+  font-size: 5px;
+  letter-spacing: 0.2em;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 10px;
+  margin-top: 2px;
+}
+
+.volume-info {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--mid);
+}
+
+.volume-number {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.volume-name {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.volume-subtitle {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.volume-specs {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0;
+  width: fit-content;
+  margin-bottom: 24px;
+}
+
+.spec-item {
+  padding: 10px 20px;
+  border: 1px solid var(--mid);
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.spec-key {
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 5px;
+}
+
+.spec-val {
+  font-size: 13px;
+  color: var(--cream);
+}
+
+.volume-meaning {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 500px;
+  padding-top: 20px;
+  border-top: 1px solid var(--mid);
+}
+
+.period-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--dim);
+  font-style: italic;
+}
+
+/* ═══════════════════
+   SHELF VISUAL
+═══════════════════ */
+
+.shelf-wrap {
+  background: var(--charcoal);
+  border: 1px solid var(--mid);
+  padding: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.shelf-label {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 48px;
+}
+
+.shelf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--mid);
+}
+
+.shelf-book {
+  width: 52px;
+  height: 160px;
+  border-radius: 2px 4px 4px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.shelf-spine {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  border-radius: 2px 0 0 2px;
+  opacity: 0.6;
+}
+
+.shelf-vol {
+  font-size: 7px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  position: relative;
+  z-index: 1;
+}
+
+.shelf-tagline {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ═══════════════════
+   COLOR REFERENCE
+═══════════════════ */
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--mid);
+  margin-bottom: 60px;
+}
+
+.color-item { background: var(--charcoal); overflow: hidden; }
+.color-swatch { height: 90px; }
+.color-info { padding: 18px 16px; }
+.color-name { font-size: 13px; color: var(--cream); margin-bottom: 4px; }
+.color-hex { font-size: 11px; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 4px; }
+.color-vol { font-size: 11px; color: var(--dim); font-style: italic; }
+
+/* ═══════════════════
+   LANDSCAPE COVER TEMPLATE
+═══════════════════ */
+
+.template-wrap {
+  margin-bottom: 60px;
+}
+
+.template-note {
+  background: var(--charcoal);
+  border: 1px solid var(--mid);
+  border-left: 3px solid var(--gold);
+  padding: 28px 36px;
+  margin-bottom: 40px;
+}
+
+.template-note-text {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* The actual landscape cover template */
+.cover-template-outer {
+  background: var(--charcoal);
+  padding: 48px;
+  border: 1px solid var(--mid);
+  overflow-x: auto;
+}
+
+.cover-template-label {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+
+/* Landscape cover — proportional to 5.5 x 8.5 book */
+/* Full cover = back(5.5") + spine(0.375") + front(5.5") x 8.5" tall */
+/* Scaled for screen: multiply by 72 = 803 x 612 — scaled down */
+
+.cover-flat {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 360px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+}
+
+/* BACK COVER — left side */
+.cover-flat-back {
+  flex: 5.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 28px;
+  position: relative;
+}
+
+/* SPINE — narrow center */
+.cover-flat-spine {
+  flex: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 6px;
+  position: relative;
+}
+
+.spine-divider-left {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.3);
+}
+
+.spine-divider-right {
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.3);
+}
+
+.spine-text-top {
+  font-size: 7px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.spine-brand {
+  font-size: 16px;
+  font-weight: 300;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+}
+
+.spine-text-bottom {
+  font-size: 6px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+/* FRONT COVER — right side */
+.cover-flat-front {
+  flex: 5.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  position: relative;
+}
+
+/* Front cover elements */
+.flat-front-i {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.flat-front-will {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.flat-front-rule {
+  width: 28px;
+  height: 1px;
+  margin: 0 auto 16px;
+}
+
+.flat-front-series {
+  font-size: 8px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.flat-front-vol {
+  font-size: 8px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.flat-front-volname {
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Back cover elements */
+.flat-back-vol {
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.flat-back-copy {
+  font-size: 9px;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+  flex: 1;
+  padding: 12px 0;
+}
+
+.flat-back-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.flat-back-rule {
+  width: 22px;
+  height: 1px;
+}
+
+.flat-back-brand {
+  font-size: 7px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.flat-back-isbn {
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  font-style: italic;
+}
+
+/* Cover face labels */
+.face-label {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.cover-template-container {
+  position: relative;
+  padding-top: 36px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.face-labels-row {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto 12px;
+}
+
+.face-label-cell {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* Dimension annotations */
+.dim-row {
+  display: flex;
+  max-width: 900px;
+  margin: 12px auto 0;
+}
+
+.dim-cell {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+  font-style: italic;
+  border-top: 1px solid var(--mid);
+  padding-top: 8px;
+}
+
+/* ═══════════════════
+   COVER SPEC TABLE
+═══════════════════ */
+
+.cover-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--mid);
+  margin-bottom: 60px;
+}
+
+.cover-spec-face {
+  background: var(--charcoal);
+  padding: 36px;
+}
+
+.cover-spec-title {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.cover-spec-row {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--mid);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cover-spec-row:last-child { border-bottom: none; }
+
+.cskey {
+  font-size: 11px;
+  color: var(--dim);
+  flex-shrink: 0;
+}
+
+.csval {
+  font-size: 12px;
+  color: var(--cream);
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* ═══════════════════
+   ISBN NOTE
+═══════════════════ */
+
+.isbn-block {
+  background: var(--charcoal);
+  border: 1px solid var(--mid);
+  border-left: 3px solid var(--gold);
+  padding: 36px 44px;
+  margin-bottom: 60px;
+}
+
+.isbn-title {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.isbn-text {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 680px;
+}
+
+/* ═══════════════════
+   FOUNDERS SET
+═══════════════════ */
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--mid);
+  margin-bottom: 48px;
+}
+
+.founders-cell {
+  background: var(--charcoal);
+  padding: 44px;
+}
+
+.founders-cell-label {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.founders-cell-title {
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.founders-cell-text {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.leather-visual {
+  background: var(--charcoal);
+  border: 1px solid var(--mid);
+  padding: 56px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.leather-book {
+  width: 150px;
+  height: 210px;
+  background: linear-gradient(135deg, #2A1A0A, #3D2510, #2A1A0A);
+  border-radius: 4px 8px 8px 4px;
+  margin: 0 auto 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    -6px 0 12px rgba(0,0,0,0.6),
+    6px 6px 24px rgba(0,0,0,0.7),
+    inset -3px 0 6px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.leather-spine-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 14px;
+  background: linear-gradient(to right, #1A0E05, #2A1A0A);
+  border-radius: 4px 0 0 4px;
+}
+
+.leather-i {
+  font-size: 38px;
+  font-weight: 300;
+  color: rgba(197,165,90,0.3);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.leather-will {
+  font-size: 38px;
+  font-weight: 300;
+  color: rgba(197,165,90,0.3);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.leather-caption {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--dim);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════
+   CLOSE
+═══════════════════ */
+
+.doc-close {
+  padding-top: 48px;
+  border-top: 1px solid var(--mid);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.close-sig {
+  font-size: 28px;
+  font-style: italic;
+  color: var(--cream);
+}
+
+.close-brand {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .page { padding: 48px 24px; }
+  .volume { grid-template-columns: 1fr; }
+  .volume-info { border-left: none; padding: 28px 24px; }
+  .color-grid { grid-template-columns: repeat(3, 1fr); }
+  .cover-spec-grid { grid-template-columns: 1fr; }
+  .founders-grid { grid-template-columns: 1fr; }
+  .volume-specs { grid-template-columns: repeat(2, auto); }
+  .cover-flat { height: auto; min-height: 280px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════ -->
+
+<div class="cover-page">
+  <div class="cover-bg-text">FITFO</div>
+
+  <div class="cover-top">
+    <span class="cover-doc-label">Product Development Document</span>
+    <span class="cover-doc-date">First Edition · 2026</span>
+  </div>
+
+  <div class="cover-center">
+    <p class="cover-pre">I WILL FITFO LLC · Coral Gables, Florida</p>
+    <div class="cover-title">
+      <span class="line">I</span>
+      <span class="line">WILL<span class="period">.</span></span>
+    </div>
+    <div class="cover-rule-wrap">
+      <div class="cover-rule-line"></div>
+      <span class="cover-rule-text">The Standard</span>
+      <div class="cover-rule-line"></div>
+    </div>
+    <p class="cover-doc-title">FITFO Journal Series<br>Color System & Cover Architecture</p>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-address">
+      I WILL FITFO LLC<br>
+      121 Alhambra Plaza, Suite 1000<br>
+      Coral Gables, Florida 33134<br>
+      iwill.world
+    </div>
+    <div class="cover-version">Confidential · Internal Use</div>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ═══════════════════════════════════════
+     SECTION 01 — THE PHILOSOPHY
+═══════════════════════════════════════ -->
+
+<div class="section" style="border-top:none; padding-top:60px;">
+  <p class="section-label">01 &nbsp; The Philosophy</p>
+  <h2 class="section-heading">Five Volumes.<br>Five Colors.<br>One Legacy.</h2>
+  <p class="section-sub">Each volume in the FITFO Journal series carries its own color — a visual record of the journey from Foundation to Legacy. The color is earned. It cannot be skipped.</p>
+
+  <div class="philosophy-block">
+    <p class="philosophy-text">The man who completes all five volumes has a shelf that tells his story without a single word. Cream to gold. The declaration fulfilled. The cover architecture never changes — only the color and the back cover copy. Every series. Every volume. The same standard.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 02 — THE FIVE VOLUMES
+═══════════════════════════════════════ -->
+
+<div class="section">
+  <p class="section-label">02 &nbsp; The Five Volumes</p>
+  <h2 class="section-heading">The Color Progression</h2>
+  <p class="section-sub">Light into darkness. Then gold on the other side. The journey visible in color from across the room.</p>
+
+  <div class="volumes">
+
+    <!-- VOL I -->
+    <div class="volume">
+      <div class="book-mock" style="background:#111;">
+        <div class="book" style="background:#E8DCC8;">
+          <div class="book-spine" style="background:#C8BCA8;"></div>
+          <div class="book-mark-i" style="color:#1C1C1C;">I</div>
+          <div class="book-mark-will" style="color:#1C1C1C;">WILL<span style="color:#C5A55A;">.</span></div>
+          <div class="book-rule" style="background:#C5A55A;"></div>
+          <div class="book-series" style="color:#6B6055;">FITFO Cigar Journal</div>
+          <div class="book-volume" style="color:#9A8E7E;">Volume I</div>
+          <div class="book-vol-name" style="color:#9A8E7E;">The Foundation</div>
+        </div>
+      </div>
+      <div class="volume-info">
+        <p class="volume-number">Volume I</p>
+        <h3 class="volume-name" style="color:#E8DCC8;">The Foundation</h3>
+        <p class="volume-subtitle">Where the record begins</p>
+        <div class="volume-specs">
+          <div class="spec-item"><p class="spec-key">Cover</p><p class="spec-val">Cream</p></div>
+          <div class="spec-item"><p class="spec-key">Hex</p><p class="spec-val">#E8DCC8</p></div>
+          <div class="spec-item"><p class="spec-key">Period</p><p class="spec-val" style="color:#C5A55A;">Gold</p></div>
+          <div class="spec-item"><p class="spec-key">Letterforms</p><p class="spec-val">Charcoal</p></div>
+          <div class="spec-item"><p class="spec-key">Status</p><p class="spec-val" style="color:#C5A55A;">Available</p></div>
+          <div class="spec-item"><p class="spec-key">Ships</p><p class="spec-val">June 1, 2026</p></div>
+        </div>
+        <p class="volume-meaning">Cream. The beginning. Understated and clean. A blank page waiting for the first entry. The man does not yet know what he will build — only that he has decided to pay attention.</p>
+      </div>
+    </div>
+
+    <!-- VOL II -->
+    <div class="volume">
+      <div class="book-mock" style="background:#0F0F0F;">
+        <div class="book" style="background:#9A8E7E;">
+          <div class="book-spine" style="background:#7A6E5E;"></div>
+          <div class="book-mark-i" style="color:#0D0D0D;">I</div>
+          <div class="book-mark-will" style="color:#0D0D0D;">WILL<span style="color:#C5A55A;">.</span></div>
+          <div class="book-rule" style="background:#C5A55A;"></div>
+          <div class="book-series" style="color:#3A3530;">FITFO Cigar Journal</div>
+          <div class="book-volume" style="color:#3A3530;">Volume II</div>
+          <div class="book-vol-name" style="color:#3A3530;">The Craft</div>
+        </div>
+      </div>
+      <div class="volume-info">
+        <p class="volume-number">Volume II</p>
+        <h3 class="volume-name" style="color:#9A8E7E;">The Craft</h3>
+        <p class="volume-subtitle">Where the eye develops</p>
+        <div class="volume-specs">
+          <div class="spec-item"><p class="spec-key">Cover</p><p class="spec-val">Muted</p></div>
+          <div class="spec-item"><p class="spec-key">Hex</p><p class="spec-val">#9A8E7E</p></div>
+          <div class="spec-item"><p class="spec-key">Period</p><p class="spec-val" style="color:#C5A55A;">Gold</p></div>
+          <div class="spec-item"><p class="spec-key">Letterforms</p><p class="spec-val">Black</p></div>
+          <div class="spec-item"><p class="spec-key">Status</p><p class="spec-val" style="color:#6B6055;">2027</p></div>
+          <div class="spec-item"><p class="spec-key">Series</p><p class="spec-val">Vol II of V</p></div>
+        </div>
+        <p class="volume-meaning">Muted. Deeper. More considered. The man has completed his first season. He begins to understand what he is building. His eye is developing. His entries grow more precise.</p>
+      </div>
+    </div>
+
+    <!-- VOL III -->
+    <div class="volume">
+      <div class="book-mock" style="background:#080808;">
+        <div class="book" style="background:#3A3530;">
+          <div class="book-spine" style="background:#2A2520;"></div>
+          <div class="book-mark-i" style="color:#E8DCC8;">I</div>
+          <div class="book-mark-will" style="color:#E8DCC8;">WILL<span style="color:#C5A55A;">.</span></div>
+          <div class="book-rule" style="background:#C5A55A;"></div>
+          <div class="book-series" style="color:#9A8E7E;">FITFO Cigar Journal</div>
+          <div class="book-volume" style="color:#9A8E7E;">Volume III</div>
+          <div class="book-vol-name" style="color:#9A8E7E;">The Connoisseur</div>
+        </div>
+      </div>
+      <div class="volume-info">
+        <p class="volume-number">Volume III</p>
+        <h3 class="volume-name" style="color:#E8DCC8;">The Connoisseur</h3>
+        <p class="volume-subtitle">Where confidence arrives</p>
+        <div class="volume-specs">
+          <div class="spec-item"><p class="spec-key">Cover</p><p class="spec-val">Mid</p></div>
+          <div class="spec-item"><p class="spec-key">Hex</p><p class="spec-val">#3A3530</p></div>
+          <div class="spec-item"><p class="spec-key">Period</p><p class="spec-val" style="color:#C5A55A;">Gold</p></div>
+          <div class="spec-item"><p class="spec-key">Letterforms</p><p class="spec-val">Cream</p></div>
+          <div class="spec-item"><p class="spec-key">Status</p><p class="spec-val" style="color:#6B6055;">2028</p></div>
+          <div class="spec-item"><p class="spec-key">Series</p><p class="spec-val">Vol III of V</p></div>
+        </div>
+        <p class="volume-meaning">Mid warm dark. Confident and grounded. The man knows what he is doing now. He has earned his opinion. He does not explain himself. He simply records.</p>
+      </div>
+    </div>
+
+    <!-- VOL IV -->
+    <div class="volume">
+      <div class="book-mock" style="background:#0A0A0A;">
+        <div class="book" style="background:#1C1C1C; border:1px solid #3A3530;">
+          <div class="book-spine" style="background:#0D0D0D;"></div>
+          <div class="book-mark-i" style="color:#E8DCC8;">I</div>
+          <div class="book-mark-will" style="color:#E8DCC8;">WILL<span style="color:#C5A55A;">.</span></div>
+          <div class="book-rule" style="background:#C5A55A;"></div>
+          <div class="book-series" style="color:#6B6055;">FITFO Cigar Journal</div>
+          <div class="book-volume" style="color:#6B6055;">Volume IV</div>
+          <div class="book-vol-name" style="color:#6B6055;">The Standard</div>
+        </div>
+      </div>
+      <div class="volume-info">
+        <p class="volume-number">Volume IV</p>
+        <h3 class="volume-name" style="color:#E8DCC8;">The Standard</h3>
+        <p class="volume-subtitle">Where the standard is lived</p>
+        <div class="volume-specs">
+          <div class="spec-item"><p class="spec-key">Cover</p><p class="spec-val">Charcoal</p></div>
+          <div class="spec-item"><p class="spec-key">Hex</p><p class="spec-val">#1C1C1C</p></div>
+          <div class="spec-item"><p class="spec-key">Period</p><p class="spec-val" style="color:#C5A55A;">Gold</p></div>
+          <div class="spec-item"><p class="spec-key">Letterforms</p><p class="spec-val">Cream</p></div>
+          <div class="spec-item"><p class="spec-key">Status</p><p class="spec-val" style="color:#6B6055;">2029</p></div>
+          <div class="spec-item"><p class="spec-key">Series</p><p class="spec-val">Vol IV of V</p></div>
+        </div>
+        <p class="volume-meaning">Charcoal. The darkest volume. The deepest discipline. The standard is no longer something he seeks — it is something he lives. The ritual is part of who he is. The gold is close now.</p>
+      </div>
+    </div>
+
+    <!-- VOL V -->
+    <div class="volume">
+      <div class="book-mock" style="background:#0A0A0A;">
+        <div class="book" style="background:linear-gradient(135deg,#B8952A,#C5A55A,#B8952A);">
+          <div class="book-spine" style="background:#A8852A;"></div>
+          <div class="book-mark-i" style="color:#0D0D0D;">I</div>
+          <div class="book-mark-will" style="color:#0D0D0D;">WILL<span style="color:#0D0D0D;">.</span></div>
+          <div class="book-rule" style="background:#0D0D0D;"></div>
+          <div class="book-series" style="color:rgba(0,0,0,0.45);">FITFO Cigar Journal</div>
+          <div class="book-volume" style="color:rgba(0,0,0,0.45);">Volume V</div>
+          <div class="book-vol-name" style="color:rgba(0,0,0,0.35);">The Legacy</div>
+        </div>
+      </div>
+      <div class="volume-info">
+        <p class="volume-number">Volume V</p>
+        <h3 class="volume-name" style="color:#C5A55A;">The Legacy</h3>
+        <p class="volume-subtitle">Where the declaration is fulfilled</p>
+        <div class="volume-specs">
+          <div class="spec-item"><p class="spec-key">Cover</p><p class="spec-val" style="color:#C5A55A;">Gold</p></div>
+          <div class="spec-item"><p class="spec-key">Hex</p><p class="spec-val" style="color:#C5A55A;">#C5A55A</p></div>
+          <div class="spec-item"><p class="spec-key">Period</p><p class="spec-val">Black #0D0D0D</p></div>
+          <div class="spec-item"><p class="spec-key">Letterforms</p><p class="spec-val">Black #0D0D0D</p></div>
+          <div class="spec-item"><p class="spec-key">Status</p><p class="spec-val" style="color:#6B6055;">2030</p></div>
+          <div class="spec-item"><p class="spec-key">Series</p><p class="spec-val">Vol V of V</p></div>
+        </div>
+        <p class="volume-meaning">Gold. The only volume where the period is black — the single approved exception in the brand standard. On gold the gold period disappears. The period becomes black not as compromise but as completion. The declaration is fulfilled.</p>
+        <p class="period-note">
+          <span style="font-size:17px;color:#C5A55A;font-style:normal;">I WILL<span style="color:#0D0D0D;">.</span></span>
+          &nbsp;— The single exception. Black period on gold. Earned.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHELF -->
+  <div class="shelf-wrap">
+    <p class="shelf-label">The Completed Shelf — The Declaration Fulfilled</p>
+    <div class="shelf">
+      <div class="shelf-book" style="background:#E8DCC8;">
+        <div class="shelf-spine" style="background:#C8BCA8;"></div>
+        <div class="shelf-vol" style="color:#6B6055;">I</div>
+      </div>
+      <div class="shelf-book" style="background:#9A8E7E;">
+        <div class="shelf-spine" style="background:#7A6E5E;"></div>
+        <div class="shelf-vol" style="color:#3A3530;">II</div>
+      </div>
+      <div class="shelf-book" style="background:#3A3530;">
+        <div class="shelf-spine" style="background:#2A2520;"></div>
+        <div class="shelf-vol" style="color:#9A8E7E;">III</div>
+      </div>
+      <div class="shelf-book" style="background:#1C1C1C; border:1px solid #3A3530;">
+        <div class="shelf-spine" style="background:#0D0D0D;"></div>
+        <div class="shelf-vol" style="color:#6B6055;">IV</div>
+      </div>
+      <div class="shelf-book" style="background:linear-gradient(to bottom,#B8952A,#C5A55A);">
+        <div class="shelf-spine" style="background:#A8852A;"></div>
+        <div class="shelf-vol" style="color:rgba(0,0,0,0.4);">V</div>
+      </div>
+    </div>
+    <p class="shelf-tagline">Cream · Muted · Mid · Charcoal · Gold<br>The progression visible from across the room.</p>
+  </div>
+
+  <!-- COLOR REFERENCE -->
+  <div class="color-grid">
+    <div class="color-item">
+      <div class="color-swatch" style="background:#E8DCC8;"></div>
+      <div class="color-info">
+        <p class="color-name">Cream</p>
+        <p class="color-hex">#E8DCC8</p>
+        <p class="color-vol">Volume I — The Foundation</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background:#9A8E7E;"></div>
+      <div class="color-info">
+        <p class="color-name">Muted</p>
+        <p class="color-hex">#9A8E7E</p>
+        <p class="color-vol">Volume II — The Craft</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background:#3A3530;"></div>
+      <div class="color-info">
+        <p class="color-name">Mid</p>
+        <p class="color-hex">#3A3530</p>
+        <p class="color-vol">Volume III — The Connoisseur</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background:#1C1C1C;"></div>
+      <div class="color-info">
+        <p class="color-name">Charcoal</p>
+        <p class="color-hex">#1C1C1C</p>
+        <p class="color-vol">Volume IV — The Standard</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background:#C5A55A;"></div>
+      <div class="color-info">
+        <p class="color-name">Gold</p>
+        <p class="color-hex">#C5A55A</p>
+        <p class="color-vol">Volume V — The Legacy</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 03 — COVER ARCHITECTURE
+═══════════════════════════════════════ -->
+
+<div class="section">
+  <p class="section-label">03 &nbsp; Cover Architecture</p>
+  <h2 class="section-heading">One Standard.<br>Every Volume.<br>Every Series.</h2>
+  <p class="section-sub">The cover architecture never changes. Only the color and the back cover copy. The brand mark is always the anchor. The series and volume information are always secondary.</p>
+
+  <!-- LANDSCAPE PRINT TEMPLATE -->
+  <div class="template-wrap">
+
+    <div class="template-note">
+      <p class="template-note-text">The cover template below represents the flat print layout — back cover left, spine center, front cover right — as it would be submitted to a printer. This is the standard for every volume of every series. The cream version is shown.</p>
+    </div>
+
+    <div class="cover-template-outer">
+      <p class="cover-template-label">Volume I — Flat Print Template — Landscape</p>
+
+      <!-- Face labels -->
+      <div class="face-labels-row">
+        <div class="face-label-cell" style="flex:5.5;">Back Cover</div>
+        <div class="face-label-cell" style="flex:0 0 40px;">Spine</div>
+        <div class="face-label-cell" style="flex:5.5;">Front Cover</div>
+      </div>
+
+      <!-- The cover -->
+      <div class="cover-flat">
+
+        <!-- BACK COVER -->
+        <div class="cover-flat-back" style="background:#D8CDB8;">
+          <div class="flat-back-vol" style="color:#1C1C1C;">The Foundation</div>
+          <div class="flat-back-copy" style="color:#6B6055;">
+            108 pages. 40 entries. One season.<br><br>
+            A knowledge section built for the man<br>
+            who pays attention.<br><br>
+            The record begins when you open it.
+          </div>
+          <div class="flat-back-bottom">
+            <div class="flat-back-rule" style="background:#C5A55A;"></div>
+            <div class="flat-back-brand" style="color:#9A8E7E;">I WILL FITFO LLC · Coral Gables, Florida</div>
+            <div class="flat-back-isbn" style="color:#B8A898;">ISBN — see copyright page</div>
+          </div>
+        </div>
+
+        <!-- SPINE -->
+        <div class="cover-flat-spine" style="background:#C8BCA8;">
+          <div class="spine-divider-left"></div>
+          <div class="spine-divider-right"></div>
+          <div class="spine-text-top" style="color:#9A8E7E;">Vol. I</div>
+          <div class="spine-brand" style="color:#1C1C1C;">
+            I<br>WILL<span style="color:#C5A55A;">.</span>
+          </div>
+          <div class="spine-text-bottom" style="color:#9A8E7E;">Cigar Journal</div>
+        </div>
+
+        <!-- FRONT COVER -->
+        <div class="cover-flat-front" style="background:#E8DCC8;">
+          <div class="flat-front-i" style="color:#1C1C1C;">I</div>
+          <div class="flat-front-will" style="color:#1C1C1C;">WILL<span style="color:#C5A55A;">.</span></div>
+          <div class="flat-front-rule" style="background:#C5A55A;"></div>
+          <div class="flat-front-series" style="color:#6B6055;">FITFO Cigar Journal</div>
+          <div class="flat-front-vol" style="color:#9A8E7E; margin-top:8px;">Volume I</div>
+          <div class="flat-front-volname" style="color:#9A8E7E;">The Foundation</div>
+        </div>
+
+      </div>
+
+      <!-- Dimension annotations -->
+      <div class="dim-row">
+        <div class="dim-cell" style="flex:5.5;">5.5" wide</div>
+        <div class="dim-cell" style="flex:0 0 40px; font-size:7px;">spine</div>
+        <div class="dim-cell" style="flex:5.5;">5.5" wide</div>
+      </div>
+      <p style="text-align:center; font-size:10px; letter-spacing:0.2em; color:var(--dim); margin-top:12px; font-style:italic;">Full cover height: 8.5" · Spine width varies with page count · Final specs confirmed at print</p>
+
+    </div>
+  </div>
+
+  <!-- SPEC TABLE -->
+  <div class="cover-spec-grid">
+
+    <div class="cover-spec-face">
+      <p class="cover-spec-title">Front Cover</p>
+      <div class="cover-spec-row">
+        <span class="cskey">Element 1</span>
+        <span class="csval">I WILL. brand mark<br>Stacked · Light 300<br>Top third · Centered</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Element 2</span>
+        <span class="csval">Gold rule · 28–32px<br>Center divider</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Element 3</span>
+        <span class="csval">FITFO [Series] Journal<br>Uppercase · Tracked</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Element 4</span>
+        <span class="csval">Volume [#]<br>Uppercase · Tracked</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Element 5</span>
+        <span class="csval">[Volume Name]<br>Italic · Tracked</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Period</span>
+        <span class="csval">Gold on Vol I–IV<br>Black on Vol V only</span>
+      </div>
+    </div>
+
+    <div class="cover-spec-face">
+      <p class="cover-spec-title">Spine</p>
+      <div class="cover-spec-row">
+        <span class="cskey">Top</span>
+        <span class="csval">Vol. [#]<br>Small · Tracked</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Center</span>
+        <span class="csval">I WILL. brand mark<br>Medium scale<br>Period rule applies</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Bottom</span>
+        <span class="csval">FITFO Cigar Journal<br>Small · Tracked</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Direction</span>
+        <span class="csval">Bottom to top<br>Standard book spine</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Color</span>
+        <span class="csval">Slightly darker than<br>front cover color</span>
+      </div>
+    </div>
+
+    <div class="cover-spec-face">
+      <p class="cover-spec-title">Back Cover</p>
+      <div class="cover-spec-row">
+        <span class="cskey">Top</span>
+        <span class="csval">[Volume Name]<br>Large · Italic · Light 300</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Middle</span>
+        <span class="csval">Volume description copy<br>3–5 lines · Changes<br>per volume</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Bottom</span>
+        <span class="csval">Gold rule<br>I WILL FITFO LLC<br>Coral Gables, Florida</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">ISBN</span>
+        <span class="csval">Text only<br>No barcode on cover</span>
+      </div>
+      <div class="cover-spec-row">
+        <span class="cskey">Barcode</span>
+        <span class="csval">Copyright page only<br>Never on back cover</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ISBN NOTE -->
+  <div class="isbn-block">
+    <p class="isbn-title">On the ISBN Barcode</p>
+    <p class="isbn-text">The back cover carries no barcode. The barcode lives on the copyright page interior — available to retailers and distributors who need it without compromising the cover. The back cover reads: <em>ISBN — see copyright page.</em> The cover is a luxury object. It stays that way.</p>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 04 — THE FOUNDERS SET
+═══════════════════════════════════════ -->
+
+<div class="section">
+  <p class="section-label">04 &nbsp; The Founders Set</p>
+  <h2 class="section-heading">The Leather Cover</h2>
+  <p class="section-sub">One cover. Five seasons. One evolution. The leather ages with the man. The shelf fills with color. The record builds.</p>
+
+  <div class="founders-grid">
+    <div class="founders-cell">
+      <p class="founders-cell-label">The Concept</p>
+      <h3 class="founders-cell-title">One leather cover.<br>Five seasons.<br>One evolution.</h3>
+      <p class="founders-cell-text">The Founders Set includes a single handmade leather cover — Crazy Horse dark brown — blind embossed I WILL. It wraps whichever volume the man is currently working through. When that season closes the journal goes on the shelf in its true color. The leather cover moves to the next volume.</p>
+    </div>
+    <div class="founders-cell">
+      <p class="founders-cell-label">The Story</p>
+      <h3 class="founders-cell-title">The leather ages.<br>The colors accumulate.<br>The legacy builds.</h3>
+      <p class="founders-cell-text">Over years the leather develops its own patina — the marks of the ritual pressed into it season after season. Meanwhile the shelf fills. Cream. Muted. Mid. Charcoal. Gold. The leather cover holds the current season. The shelf holds the record of all of them.</p>
+    </div>
+  </div>
+
+  <div class="leather-visual">
+    <div class="leather-book">
+      <div class="leather-spine-bar"></div>
+      <div class="leather-i">I</div>
+      <div class="leather-will">WILL<span style="color:rgba(197,165,90,0.2);">.</span></div>
+    </div>
+    <p class="leather-caption">Crazy Horse dark brown leather. Blind embossed I WILL. Natural patina develops with use. Moves from volume to volume as each season closes. Available exclusively in the Founders Set.</p>
+  </div>
+
+</div>
+
+<!-- CLOSE -->
+<div class="doc-close">
+  <span class="close-sig">— W</span>
+  <span class="close-brand">I WILL FITFO LLC &nbsp;·&nbsp; Coral Gables, Florida &nbsp;·&nbsp; First Edition 2026</span>
+</div>
+
+</div>
+</body>
+</html>
